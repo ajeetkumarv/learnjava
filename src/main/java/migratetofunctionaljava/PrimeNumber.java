@@ -1,5 +1,6 @@
 package migratetofunctionaljava;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -49,7 +50,8 @@ public class PrimeNumber {
                 .mapToDouble(Math::sqrt)
                 .boxed()
                 //above call is necessary bcz DoubleStream returned by mapToDouble doesn't support Collectors.toList()
-                .collect(Collectors.toList());
+                //or below way to making list as LinkedList
+                .collect(Collectors.toCollection(LinkedList::new));
         return result;
     }
 

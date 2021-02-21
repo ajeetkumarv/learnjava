@@ -10,6 +10,7 @@ public class Puzzled {
         List<Integer> data = Arrays.asList(1,2,3,4,5);
         int[] factorWrapper = {2};
 
+        // these are only intermediate funtion
         Stream stream = data.stream()
                 .peek(n -> System.out.print("Before: " + factorWrapper[0]))
                 .map(n -> n * factorWrapper[0])
@@ -17,6 +18,7 @@ public class Puzzled {
 
         factorWrapper[0] = 5; // this is picked
 
+        //this is terminal function
         stream.forEach(System.out::println);
 
 
