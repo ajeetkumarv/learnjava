@@ -3,6 +3,10 @@ package functionalprogramming;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Java 8 Language Capabilities, What's in it for you?
+ * https://www.youtube.com/watch?v=j9nj5dTo54Q&t=1594s
+ */
 public class StreamsTest {
     public static void main(String[] args) {
         List<Integer> data = Arrays.asList(1,2,3,4,5);
@@ -12,6 +16,8 @@ public class StreamsTest {
 
         System.out.println("Total 1: " + total1);
         System.out.println("Total 2: " + total2);
+
+
     }
 
     private static int imperativeWay(List<Integer> data) {
