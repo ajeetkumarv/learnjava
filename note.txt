@@ -1,1 +1,29 @@
  Short, Self Contained, Correct (Compilable), Example (also known as an SSCCE).
+Mutable states problems
+    Error prone
+    hard to reason
+    hard to make concurrent
+Higher Order Function means
+we can pass Function to Function
+we can create Function within Function
+we can return Function from Function
+
+Functions have to be pure, they don't have side effects
+1. does not change anything
+2. does not depend of anything that changes
+
+Imperative vs Declarative
+how             what
+Mutate          transform
+side-effects    pure
+pass objects    pass Function also
+hard to compose Functional composition
+
+java -p => module path
+java -f output/second.jar -d => will tell you the name
+
+Everything in the class path goes for Unnamed module
+Automatic module is old jar coming to life in module path
+Explicitly named module are new stuff in the module path.- has module descriptor
+
+
