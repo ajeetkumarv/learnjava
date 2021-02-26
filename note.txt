@@ -26,4 +26,22 @@ Everything in the class path goes for Unnamed module
 Automatic module is old jar coming to life in module path
 Explicitly named module are new stuff in the module path.- has module descriptor
 
+if function is pure, compiler can use referencial transparancy ie. if a and b are final then usage of a + b can be
+replaced by their values added, so runs faster
+
+Builder pattern is also known as Train reck pattern or cascade pattern
+
+
+there 5 types of lambda
+static Integer::parseInt
+bound the one capturing state eg. Instance.now()::isAfter
+unbound String::toLowerCase
+class constructor LinkedList::new
+Array constructor int[]:: new
+
+there are 43 standard function Interfaces
+6 are basic.
+
+
+parallelization is optimization, treat it like any other optimization
 
