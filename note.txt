@@ -85,7 +85,9 @@ so user one uses TimeTeller interface is only concerned about time details not A
 
 we are keeping interfaces separate for time, alarm, and radio
 
+Functionl Programming = function composition and Lazy evaluation
 
+Collectors mutablility is Local not shared hence safe
 
 
 

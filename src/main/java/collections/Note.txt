@@ -1,0 +1,10 @@
+Collectors
+    .toList
+    .toMap
+    .toSet
+    .toUnmodifiableList
+    .toUnmodifiableSet
+    .toUnmodifiableMap
+    .toConcurrentList
+    .toConcurrentMap
+
