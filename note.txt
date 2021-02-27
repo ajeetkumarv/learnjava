@@ -45,3 +45,47 @@ there are 43 standard function Interfaces
 
 parallelization is optimization, treat it like any other optimization
 
+we don't come up with new things, we just come up with new names of same things and get very excited about it.
+You can not learn an idiom by learning dictionary
+idioms have a history, they have a story, and usage
+Eg. rains cats and dogs
+
+Concise
+Highly Expressive
+
+
+The Illitrates of the 21st centuary will not be those who can not read and write
+but those who can not learn, unlearn and relearn = Alwin Toffler
+
+i want to work in a company which creates environment which allows me to say I don't know
+in a team that makes absolutely safe to be honest, for me to say i want to learn
+
+Environment Shapes Behaviour
+
+
+There are risks and costs to a program of action, but they are far less than the long-range risks and costs of
+comfortable inaction - jFK
+
+Design is good if its easier to change
+
+YAGNI - You are not gonna Need it
+    postpone things until they are really really needed
+
+Cohesive code is narrow, focused, and does only one thing, hence changes less frequently
+    Like things together, unlike things separate
+
+Liskov's Substitution Principle
+    use it only if there is substitutability
+    Inheritance demands more from developers than Composition
+
+Interface Segregation Principle
+Clock implements TimeTeller, Alarm, Radio
+
+so user one uses TimeTeller interface is only concerned about time details not Alarm or Radio
+
+we are keeping interfaces separate for time, alarm, and radio
+
+
+
+
+
