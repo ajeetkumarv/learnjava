@@ -1,10 +1,12 @@
 package collections;
 
-import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.*;
 
 public class MapOperations {
     public static void main(String[] args) {
@@ -41,6 +43,60 @@ public class MapOperations {
                 .stream()
                 .collect(Collectors.partitioningBy(p -> p.getAge() % 2 ==0));
 
+        int sum = getPeople().stream().mapToInt(Person::getAge).sum(); // returns primitive int
+
+        /* ---------------------------- */
+        Map<Integer, List<String>> ageNames =  getPeople().stream()
+                .collect(groupingBy(Person::getAge, mapping(Person::getName, toCollection(LinkedList::new))));
+
+        Map<Integer, List<String>> ageNamesGT4length =  getPeople().stream()
+                .collect(
+                        groupingBy(
+                                Person::getAge,
+                                mapping(Person::getName, filtering(name -> name.length()>3, toList()))
+                        )
+                );
+
+        Map<Integer, String> ageCsvNames =  getPeople().stream()
+                .collect(groupingBy(Person::getAge, mapping(Person::getName, joining(", "))));
+
+        Map<Integer, Long> ageCount =  getPeople().stream()
+                .collect(groupingBy(Person::getAge, mapping(Person::getName, counting())));
+
+
+
+        // What if I want Integer, or any other transformation
+        // so String.valueOF AND .intValue represents we can do anything after counting
+        Map<Integer, String> ageIntegerCount =  getPeople().stream()
+                .collect(
+                        groupingBy(Person::getAge, mapping(
+                                Person::getName,
+                                collectingAndThen(counting(), val -> String.valueOf(val.intValue()))
+                        ))
+                );
+
+        Map<Integer, String> ageSortedCsvNames =  getPeople().stream()
+                .collect(groupingBy(
+                        Person::getAge,
+                        TreeMap::new,
+                        mapping(Person::getName, joining(", ")))
+                );
+
+        Map<AgeGroup, String> ageModifiedCsvNames =  getPeople().stream()
+                .collect(groupingBy(AgeGroup::getAgeGroup, mapping(Person::getName, joining(", "))));
+        System.out.println("Age Grouped: " + ageModifiedCsvNames);
+
+    }
+
+    public enum AgeGroup {
+        KID, TEENAGE, ADULT;
+
+        public static AgeGroup getAgeGroup(Person person) {
+            int age = person.getAge();
+            if (age < 15) return KID;
+            if (age < 20) return TEENAGE;
+            return ADULT;
+        }
     }
 
     private static Person getYounger(Person p1, Person p2) {

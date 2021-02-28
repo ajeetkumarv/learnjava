@@ -8,3 +8,8 @@ Collectors
     .toConcurrentList
     .toConcurrentMap
 
+Check Teeing in collectors this came with Java 12
+if means collector, collector, combineThoseCollectors
+
+https://www.baeldung.com/java-8-collectors
+
