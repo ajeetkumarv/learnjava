@@ -10,6 +10,7 @@ public class MapOperations {
     public static void main(String[] args) {
         //example 1
         // key should be group of 5-10,11-15 and list of Person as value
+        // https://www.baeldung.com/java-spliterator
         // individual age is easy right
         Map<Integer, List<Person>> map = getPeople()
                 .stream()
