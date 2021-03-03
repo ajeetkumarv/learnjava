@@ -25,6 +25,10 @@ public class Demo {
         Optional<Student> hasMostBooks = createStudents().stream()
                 .collect(Collectors.maxBy(Comparator.comparing(s -> s.getBooks().size())));
         System.out.println("Has max book: " + hasMostBooks.get().getFirstName());
+
+        System.out.println("-------------------------");
+        List<List<Book>> booksInGroups = studs.stream().map(Student::getBooks).collect(Collectors.toList());
+        List<Book> allBooksMerged = studs.stream().flatMap(s -> s.getBooks().stream()).collect(Collectors.toList());
     }
 
     private static List<Student> createStudents() {
