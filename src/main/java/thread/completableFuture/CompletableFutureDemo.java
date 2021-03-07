@@ -25,7 +25,7 @@ public class CompletableFutureDemo {
         return CompletableFuture.supplyAsync(() -> compute(), fjp);
     }
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    public static void main(String[] args) throws Exception {
 
         CompletableFutureDemo demo = new CompletableFutureDemo();
 
@@ -35,6 +35,8 @@ public class CompletableFutureDemo {
         // printIt may be called by main or ForkJoinPool thread
         // if pool thread if finished before thenAccept then main will be used to invoke it
         completableFuture.thenAccept(demo::printIt);
+
+        if (true) throw new Exception("Breaking");
 
         System.out.println("-------------RUNNING IN MENTIONED POOL----------------");
 
@@ -55,6 +57,7 @@ public class CompletableFutureDemo {
 
         CompletableFuture<Integer> completableFuture2 = demo.create(4000L);
         completableFuture2
+                .thenApply((d) -> d * 100)
                 .thenAccept(demo::printIt)
                 .thenRun(() -> System.out.println("Something in Runnable"))
                 .thenRun(() -> System.out.println("Something again in Runnable"))
