@@ -7,6 +7,10 @@ import java.util.Set;
 
 public class PairAddUptoSum {
     public static void main(String[] args) {
+
+        HashSet hs = new HashSet();
+
+
         int[] data = {1,2,3,7,4,8,5};
 
         Map<Integer, Integer> pair = new HashMap<>();
