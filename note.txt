@@ -89,5 +89,45 @@ Functionl Programming = function composition and Lazy evaluation
 
 Collectors mutablility is Local not shared hence safe
 
+There is no point in optimizing the code for writing (or performance)
+wen real cost is in reading
+Mutability needs company, it often hangs around with bugs
+
+
+These things add complexity: https://www.youtube.com/watch?v=nZcLHkORdHE&list=WL&index=17
+    Too many moving parts
+    Invisible changes
+    uncontrolled Mutability
+    lack of cohesion
+    excessive dependencies
+    technology infatuation
+    low level concurrency
+    imperative style
+    entwinement: mixing two orthogonal stuff and putting them together
+        Example: Manage external resources more deterministically,hence should not depend on finalize for external resource cleanup
+        external resrouce cleanup is different than memory cleanup
+
+a maintainable code is the gift we give to our future self
+
+
+Java 8 sorting in streams
+    based on firstName and secondName;
+
+List<String> Max duplicates
+    Highest Duplication
+
+Normal Spring common question Singleton ko proto ke ander dala and reverse kiya to
+Spring scopes
+
+synchronized hashmap
+
+DB
+student and course table
+    course 1 to 1 hai to foreign
+
+Product id name type
+Prodct type  ptId, ptName
+metadata order id pid order date
+
 
 
